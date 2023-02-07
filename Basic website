@@ -1,0 +1,157 @@
+<body>
+    <header>
+        <h1 class="text_center monochrome_style italic_bold_styling">Basic website</h1>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a class="underline_text" href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="box_cont">
+            <div class="parent-1">
+                <div class="child">
+                    <p class="center italic_bold_styling | grandchildren">This is a content that needs to be in the center!</p>>
+                    <p class="larger_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas debitis rem, odit similique
+                        quas quasi optio minima magni doloribus ipsam illo aspernatur suscipit laudantium delectus
+                        totam. Iusto ab optio veniam adipisci ullam labore quos officiis deleniti cum voluptates
+                        accusamus a magnam velit voluptas accusantium reprehenderit, iste quia in. Doloribus eos
+                        recusandae ipsum unde ex alias. Debitis non distinctio earum ipsam totam nulla quasi optio
+                        obcaecati doloribus minima adipisci, iste tempore, minus consequatur necessitatibus eligendi
+                        aspernatur! Cum recusandae dolorum quam consequatur quae neque facere ducimus illum? Quas ipsam,
+                        rerum id perferendis pariatur provident consectetur accusantium repellat distinctio ad magni
+                        placeat quam!</p>
+                </div>
+            </div>
+            <div class="parent-2">
+                <div class="child">
+                    <p class="center italic_bold_styling | grandchildren">This is a content that needs to be in the center!</p>
+                    <p class="larger_content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas debitis rem, odit similique
+                        quas quasi optio minima magni doloribus ipsam illo aspernatur suscipit laudantium delectus
+                        totam. Iusto ab optio veniam adipisci ullam labore quos officiis deleniti cum voluptates
+                        accusamus a magnam velit voluptas accusantium reprehenderit, iste quia in. Doloribus eos
+                        recusandae ipsum unde ex alias. Debitis non distinctio earum ipsam totam nulla quasi optio
+                        obcaecati doloribus minima adipisci, iste tempore, minus consequatur necessitatibus eligendi
+                        aspernatur! Cum recusandae dolorum quam consequatur quae neque facere ducimus illum? Quas ipsam,
+                        rerum id perferendis pariatur provident consectetur accusantium repellat distinctio ad magni
+                        placeat quam!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p class="text_center monochrome_style">Reserved rights <sup>&copy;</sup> <span
+                class="underline_text">Pravin</span></p>
+    </footer>
+</body>
+
+
+// CSS
+
+@import url('https://fonts.googleapis.com/css2?family=Aclonica&family=Montserrat:ital,wght@0,100;0,200;0,300;0,600;1,100;1,200;1,300;1,600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: .5em;
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+}
+
+/* Resets: */
+
+h1, p, ul {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Utility classes: */
+
+.center {
+    width: fit-content;
+    margin: auto;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.underline_text {
+    text-decoration: 2px underline yellow;
+}
+
+.italic_bold_styling {
+    font-family: 'Aclonica', sans-serif;
+    font-style: normal;
+    font-weight: bolder;
+}
+
+.monochrome_style {
+    background-color: black;
+    color: white;
+    padding: .4em;
+    font-weight: 600;
+}
+
+/* Component classes: */
+
+.navigation {
+    background-color: rgb(248 89 89 / 80%);
+    padding: .5em 0;
+    text-align: end;
+}
+
+.navigation ul li {
+    display: inline;
+    margin: 0 2.5rem;
+    font-weight: 600;
+}
+
+.navigation a {
+    color: white;
+}
+
+.box_cont>* {
+    display: inline-block;
+    padding: 1em 1em 2.5em;
+    width: 49.8%;
+}
+
+.parent-1 {
+    background-color: #CE2029;
+}
+
+.parent-2 {
+    background-color: #CD5700;
+}
+
+.child {
+    border: 0.1px solid;
+    color: black;
+    background-color: white;
+}
+
+.grandchildren {
+    background-color: rgb(214, 206, 206, 0.6);
+    padding: 1em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.larger_content {
+    line-height: 1.5;
+    text-align-last: center;
+}
