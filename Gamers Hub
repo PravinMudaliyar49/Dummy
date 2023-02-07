@@ -1,0 +1,576 @@
+<body>
+    <header>
+        <nav class="box-shadow_slight | navigationbar_container | navigationbar_container_styling">
+            <input class="check_input" id="check" type="checkbox">
+            <label class="flex_center | hamburger_container" for="check">
+                <span class="icon_bar top_bar"></span>
+                <span class="icon_bar middle_bar"></span>
+                <span class="icon_bar bottom_bar"></span>
+            </label>
+
+            <ul class="navigationbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <div class="flex_center | profile_container | profile_styling">
+                <span class="account_img material-symbols-outlined">person</span>
+                <ul class="dropdown_container | dropdown_container_styling">
+                    <li>Profile</li>
+                    <li>Settings</li>
+                    <li class="box-shadow_slight">Log out</li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="empty_spacing"></div>
+    <main>
+        <section class="flex_center | hero_section">
+            <div class="hero_img_container">
+                <img src="./img/gaming-image.jpg" alt="gaming hero image" class="">
+            </div>
+
+            <h1 class="hero_title | hero_title_styling"> <span>One stop destination for all of your gaming
+                    persuit</span> </h1>
+
+            <div class="hover_appearing_boxes">
+                <div class="box box1"></div>
+                <div class="box box2"></div>
+                <div class="box box3"></div>
+                <div class="box box4"></div>
+                <div class="box box5"></div>
+            </div>
+        </section>
+        <section class="overlay_images_section">
+            <h2 class="overlay_title">Varieties that are worth taking a look at...</h2>
+            <div class="overlay_img_container">
+                <div class="box-shadow_slight | images_container img1_container | images_container_styling">
+                    <div class="images_content img1_content | images_content_styling">
+                        <h3 class="genre_title">Single player</h3>
+                        <a href="#" class="btn | btn-learn_more">Learn more</a>
+                    </div>
+                </div>
+                <div class="box-shadow_slight | images_container img2_container | images_container_styling">
+                    <div class="images_content img2_content | images_content_styling">
+                        <h3 class="genre_title">Action</h3>
+                        <a href="#" class="btn | btn-learn_more">Learn more</a>
+                    </div>
+                </div>
+                <div class="box-shadow_slight | images_container img3_container | images_container_styling">
+                    <div class="images_content img3_content | images_content_styling">
+                        <h3 class="genre_title">Adventure</h3>
+                        <a href="#" class="btn | btn-learn_more">Learn more</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer_styling">
+        <h2 class="footer_title">All Rights reserved <sup>&copy;</sup> <strong><u>Pravin</u></strong> </h2>
+    </footer>
+</body>
+
+// CSS 
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    background-image: url(./img/webb-dark.png);
+
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Resets: */
+
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Utility classes */
+.flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-shadow_slight {
+    box-shadow: 0px 5px 10px 0 rgba(0, 255, 255, 0.7);
+}
+
+.btn {
+    padding: .5em 1em;
+    border: none;
+    border-radius: 10px;
+
+    font: inherit;
+    color: inherit;
+
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Component classes */
+.navigationbar_container {
+    display: flex;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+    z-index: 100;
+}
+
+.navigationbar_container_styling {
+    padding: 1em 2em;
+    background-color: rgba(128, 128, 128, .7);
+}
+
+.navigationbar {
+    display: flex;
+    align-items: center;
+}
+
+.navigationbar>* {
+    margin: 0 2rem;
+    cursor: pointer;
+
+    font-weight: 600;
+    font-style: italic;
+
+    transition: opacity 400ms ease-in-out;
+}
+
+.navigationbar>li:hover {
+    opacity: .5;
+}
+
+.profile_container {
+    height: 3rem;
+    width: 3rem;
+
+    position: relative;
+}
+
+.profile_styling {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255);
+    color: black;
+}
+
+.account_img {
+    cursor: pointer;
+}
+
+.dropdown_container {
+    width: 15rem;
+
+    position: absolute;
+    top: 60%;
+    right: -50%;
+
+    visibility: hidden;
+    opacity: 0;
+}
+
+.dropdown_container_styling {
+    padding: 2em;
+
+    text-align: center;
+
+    transition: opacity 400ms ease-in-out,
+        visibility 400ms ease-in-out;
+}
+
+.dropdown_container>* {
+    color: white;
+    padding: 1em 2em;
+    
+    border: 2px solid white;
+    border-bottom: none;
+    border-radius: 10px;
+    
+    cursor: pointer;
+    transition: background-color 400ms ease-in-out;
+}
+
+.dropdown_container>*:last-child {
+    border-bottom: 2px solid white;
+}
+
+.dropdown_container li:hover {
+    background-color: rgba(99, 255, 255, 0.7);
+}
+
+.profile_container:hover .dropdown_container {
+    visibility: visible;
+    opacity: 1;
+}
+
+.empty_spacing {
+    height: 6rem;
+}
+
+.hero_section {
+    flex-direction: column;
+}
+
+.hero_img_container {
+    width: 60%;
+}
+
+.hero_img_container img {
+    width: 100%;
+}
+
+.hero_title {
+    width: 50%;
+
+    position: sticky;
+    top: 8rem;
+}
+
+.hero_title_styling {
+    text-align: center;
+    font-size: 4vw;
+    line-height: 1.45;
+
+    transform: skewY(-6deg);
+    margin: -3rem auto;
+}
+
+.hero_title span {
+    padding: .2em .5em;
+    background-color: rgba(128, 128, 128, .7);
+    border: 1.5px solid rgba(0, 255, 255);
+}
+
+/* hover appearing boxes: */
+
+.hover_appearing_boxes {
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-around;
+}
+
+.box {
+    padding: 10em 5em;
+
+    background-color: white;
+    background-image: url(./img/gaming-studio.jpg);
+    background-size: cover;
+}
+
+.hover_appearing_boxes>.box:not(.box1) {
+    opacity: 0;
+}
+
+.box1 {
+    cursor: pointer;
+}
+
+.box2 {
+    background-position: 25%;
+    transition: opacity 200ms ease-in-out;
+}
+
+.box3 {
+    background-position: 50%;
+    transition: opacity 400ms ease-in-out;
+}
+
+.box4 {
+    background-position: 75%;
+    transition: opacity 600ms ease-in-out;
+}
+
+.box5 {
+    background-position: 100%;
+    transition: opacity 800ms ease-in-out;
+}
+
+.box1:hover~.box {
+    opacity: 1;
+}
+
+/* Overlay images: */
+
+.overlay_images_section {
+    color: rgb(0, 227, 255);
+    margin-top: 8rem;
+}
+
+.overlay_title {
+    font-size: xx-large;
+    text-align: center;
+    font-style: italic;
+    text-shadow: 0 3px 2px,
+        0 6px 10px rgba(0, 227, 255, 0.15),
+        0 8px 2px rgba(0, 227, 255, 0.3),
+        0 30px 20px rgba(0, 227, 255, 0.1);
+}
+
+.overlay_img_container {
+    padding: 2em 3em;
+    height: 20rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.images_container {
+    position: relative;
+
+    height: 70%;
+    width: 30%;
+
+    padding: 2em;
+}
+
+.images_container_styling {
+    background-color: white;
+    background-position: top center;
+    background-size: cover;
+
+    border-radius: 10px;
+    transition: outline ease-in-out 400ms 100ms, outline-offset ease-in-out 400ms 100ms;
+}
+
+.img1_container {
+    background-image: url(./img/Minecraft-dark-screen.jpg);
+}
+
+.img2_container {
+    background-image: url(./img/league-of-legendsimage.jpg);
+}
+
+.img3_container {
+    background-image: url(./img/Red_Dead_Redemption_II.jpg);
+}
+
+.images_container::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    background-color: rgba(179, 179, 179, 0.6);
+    
+    border-radius: 10px;
+
+    transform: scaleY(0);
+    transition: transform 300ms ease-in-out;
+}
+
+.images_container:hover {
+    outline: 3px solid white;
+    outline-offset: 5px;
+}
+
+.images_container:hover::after {
+    transform: scaleY(1);
+}
+
+.images_content {
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.images_content_styling {
+    text-align: center;
+    opacity: 0;
+    transition: opacity 300ms ease-in-out 400ms;
+}
+
+.images_content>* {
+    z-index: 2;
+}
+
+.genre_title {
+    font-size: xx-large;
+}
+
+.btn-learn_more {
+    margin: 1rem auto;
+
+    background-color: rgba(205, 205, 205, .47);
+
+    font-size: larger;
+    font-weight: bolder;
+}
+
+.images_container:hover .images_content {
+    opacity: 1;
+}
+
+.footer_styling {
+    padding: 1em;
+    background-color: rgba(128, 128, 128, .6);
+}
+
+.footer_title {
+    text-align: center;
+}
+
+/* Hamburger working: */
+.check_input {
+    display: none;
+}
+
+.hamburger_container {
+    width: 3rem;
+    height: 3rem;
+    
+    flex-direction: column;
+    
+    cursor: pointer;
+    display: none;
+}
+
+.icon_bar {
+    display: inline-block;
+    height: 5px;
+    width: 100%;
+
+    border: 1px solid white;
+    border-radius: 5px;
+
+    transition: transform 500ms ease-in-out, opacity 500ms ease-in-out;
+    box-shadow: 0px 4px 8px rgb(0, 0, 0, 0.5);
+}
+
+.top_bar {
+    transform: translateY(-4px);
+}
+
+.bottom_bar {
+    transform: translateY(4px);
+}
+
+.check_input:checked+.hamburger_container .top_bar {
+    transform: translateY(4px) rotate(-45deg);
+}
+
+.check_input:checked+.hamburger_container .middle_bar {
+    opacity: 0;
+}
+
+.check_input:checked+.hamburger_container .bottom_bar {
+    transform: translateY(-6px) rotate(45deg);
+}
+
+.check_input:checked~.navigationbar {
+    opacity: 1;
+}
+
+@media (max-width: 800px) {
+    .hero_title {
+        width: 70%;
+        font-size: 2rem;
+    }
+
+    .hero_title span {
+        padding: .3em 2em;
+        border: 2px solid black;
+    }
+
+    .hover_appearing_boxes {
+        display: none;
+    }
+
+    .genre_title {
+        font-size: x-large;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero_title {
+        padding: 0 1em;
+        width: 80%;
+    }
+
+    .navigationbar_container_styling {
+        padding: 0.5em 2em;
+    }
+    
+    .empty_spacing {
+        height: 5rem;
+    }
+
+    .hamburger_container {
+        display: flex;
+    }
+
+    .dropdown_container {
+        width: 12rem;
+    }
+
+    .dropdown_container>* {
+        padding: .5em 1em;
+    }
+
+    .navigationbar {
+        background-color: rgb(128 128 128 / 70%);
+
+        position: absolute;
+        left: 0;
+        top: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        height: 80vh;
+        width: fit-content;
+
+        opacity: 0;
+        transition: opacity 500ms ease-in-out;
+    }
+
+    .navigationbar a {
+        cursor: default;
+    }
+
+    .overlay_img_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        height: 40rem;
+    }
+
+    .images_container {
+        width: 70%;
+        height: 30%;
+    }
+}
+
+@media (max-width: 500px) {
+    .overlay_title {
+        font-size: large;
+    }
+
+    .genre_title {
+        font-size: large;
+    }
+}
