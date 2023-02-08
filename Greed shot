@@ -1,0 +1,353 @@
+<body>
+    <main class="main_container">
+        <section class="container | container_styling">
+            <div class="overall_score_container | overall_score_container_styling  player--active" id="player--0">
+                <h2 class="player_label">Gamer 1</h2>
+                <span class="player_score" id="overall_score--0">40</span>
+            </div>
+            <div class="current_score_container">
+                <span class="curr_score" id="current_score--0">10</span>
+                <img src="./img/add-svgrepo-com.svg" class="add_curr_score" id="add_curr_score--0" alt="add current score">
+            </div>
+        </section>
+        <section class="container | container_styling">
+            <div class="overall_score_container | overall_score_container_styling " id="player--1">
+                <h2 class="player_label">Gamer 2</h2>
+                <span class="player_score" id="overall_score--1">40</span>
+            </div>
+            <div class="current_score_container">
+                <span class="curr_score" id="current_score--1">10</span>
+                <img src="./img/add-svgrepo-com.svg" class="add_curr_score isDisabled" id="add_curr_score--1" alt="add current score">
+            </div>
+        </section>
+        <div class="actions_container">
+            <button class="btn restart_btn">Restart 🔄</button>
+            <div class="ruler_container">
+                <div class="flex_center | popup | popup_styling | warning">10</div>
+                <div class="flex_center | popup | popup_styling">9</div>
+                <div class="flex_center | popup | popup_styling">8</div>
+                <div class="flex_center | popup | popup_styling">7</div>
+                <div class="flex_center | popup | popup_styling">6</div>
+                <div class="flex_center | popup | popup_styling | warning">5</div>
+                <div class="flex_center | popup | popup_styling">4</div>
+                <div class="flex_center | popup | popup_styling">3</div>
+                <div class="flex_center | popup | popup_styling">2</div>
+                <div class="flex_center | popup | popup_styling | warning">1</div>
+            </div>
+            <div class="shooter_container | shooter_container_styling"></div>
+            <div class="laser"></div>
+        </div>
+    </main>
+
+</body>
+
+// CSS
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+:root {
+    --ff-primary: 'Poppins', sans-serif;
+
+    --clr-primary-100: white;
+
+    --clr-accent-500: red;
+    --clr-accent-200: green;
+
+    --fw-s: 300;
+    --fw-n: 400;
+    --fw-m: 600;
+    --fw-b: 800;
+
+    --border-rad1: 10px;
+
+    --border1: 2px solid rgba(0, 0, 0, 0.082);
+
+    --transition-1: 300ms ease-in;
+
+    --shadow-1: 0 2px 8px rgba(255, 255, 255, 0.8);
+    --shadow-2: 0 1px 2px rgba(255, 255, 255, 0.2);
+
+    --linear-gradient-direction: to top right;
+    --primary-background: linear-gradient(var(--linear-gradient-direction), rgb(0, 0, 0, 0.7), rgb(0, 0, 0, 0.9));
+
+    --popup-outline: 5px solid yellow;
+}
+
+body {
+    background-image: url(https://www.toptal.com/designers/subtlepatterns/uploads/5-dots.png);
+    background-size: 100rem;
+    color: white;
+    font-family: var(--ff-primary);
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.flex_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    border: none;
+    line-height: 1;
+    padding: 1em 2em;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: var(--fw-m);
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.main_container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container_styling {
+    /* border: 2px solid white;
+    border-top: none;
+    border-bottom: none; */
+    padding: .7em;
+}
+
+.overall_score_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 75%;
+    width: 15%;
+    position: relative;
+}
+
+.overall_score_container_styling {
+    margin-left: 1rem;
+    border-radius: 10px;
+    font-weight: var(--fw-s);
+    transition: background-color var(--transition-1);
+}
+
+.overall_score_container_styling * {
+    font-weight: inherit;
+}
+
+.player_score {
+    font-size: xxx-large;
+}
+
+.current_score_container {
+    height: 75%;
+    width: 15%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.curr_score {
+    font-size: 4rem;
+}
+
+.add_curr_score {
+    width: 3rem;
+    background-color: white;
+    cursor: pointer;
+    transition: transform var(--transition-1),
+        box-shadow var(--transition-1),
+        opacity var(--transition-1);
+    box-shadow: var(--shadow-1);
+}
+
+.add_curr_score:active {
+    transform: translateY(3px);
+    box-shadow: var(--shadow-2);
+}
+
+.actions_container {
+    width: 100%;
+    padding: 2em;
+    padding-right: 0;
+
+    position: fixed;
+
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+
+    display: flex;
+    align-items: center;
+}
+
+.restart_btn {
+    margin-right: auto;
+    background-color: aliceblue;
+    color: black;
+    border-radius: 15px;
+    transition: transform 200ms ease-in-out;
+}
+
+.restart_btn:active {
+    transform: translateY(5px);
+}
+
+.restart_btn.animateUpdown {
+    animation: restart_game 500ms ease-in-out infinite;
+}
+
+.ruler_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1000px;
+}
+
+.popup {
+    height: 100px;
+    width: 100px;
+}
+
+.popup_styling {
+    border-radius: 50%;
+    text-align: center;
+    font-weight: var(--fw-b);
+    outline: 5px solid rgb(2, 195, 154);
+    outline-offset: -20px;
+    transition: transform 600ms ease-in-out,
+        outline 600ms ease-in-out;
+}
+
+.popup.translateAbove {
+    transform: translateY(-100px);
+    outline: var(--popup-outline);
+}
+
+.popup.translateBelow {
+    transform: translateY(100px);
+    outline: var(--popup-outline);
+}
+
+.shooter_container {
+    width: 4rem;
+    height: 8rem;
+    position: relative;
+    align-self: flex-end;
+}
+
+.shooter_container_styling {
+    margin-left: 50px;
+    background-color: aliceblue;
+    cursor: pointer;
+    transition: transform var(--transition-1);
+}
+
+.shooter_container::before,
+.shooter_container::after {
+    content: '';
+    position: absolute;
+    padding: 1em;
+    width: 50%;
+    background-color: black;
+}
+
+.shooter_container::after {
+    bottom: 0;
+}
+
+.shooter_container:active {
+    transform: translateX(12px);
+}
+
+.laser {
+    position: absolute;
+    right: 4rem;
+
+    width: 0px;
+    height: 4px;
+
+    background-color: aqua;
+    transition: width 600ms ease;
+}
+
+.warning {
+    color: red;
+}
+
+.player--active {
+    background-color: grey;
+    background-image: linear-gradient(var(--linear-gradient-direction), rgb(29 255 207), #515151);
+}
+
+.player--active * {
+    font-weight: var(--fw-m);
+}
+
+/* JS related classes: */
+
+.isDisabled {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.winner {
+    background-color: greenyellow;
+    background-image: linear-gradient(to bottom left, green, greenyellow);
+    transform: scale(1.06);
+}
+
+.loser {
+    background-color: tomato;
+    background-image: linear-gradient(to bottom left, red, rgb(245, 168, 154));
+    opacity: .5;
+}
+
+@keyframes restart_game {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(2px);
+    }
+
+    50% {
+        transform: translateY(4px);
+    }
+
+    75% {
+        transform: translateY(2px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
